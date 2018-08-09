@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 114589727882764448}
   - component: {fileID: 114158709030337716}
   - component: {fileID: 114845914654117040}
+  - component: {fileID: 114447188390713996}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -205,28 +206,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376936033916774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
   m_LocalPosition: {x: 0.43, y: 2.1, z: 0.09500003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4290443131723266}
   m_Father: {fileID: 4609875605360758}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
 --- !u!4 &4214980029377298
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484756799776562}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
   m_LocalPosition: {x: -0.43, y: 2.1, z: 0.09500003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4454991716360108}
   m_Father: {fileID: 4609875605360758}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30}
 --- !u!4 &4290443131723266
 Transform:
   m_ObjectHideFlags: 1
@@ -234,7 +235,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161850182519254}
   m_LocalRotation: {x: -0, y: -0, z: 0.19936788, w: 0.97992474}
-  m_LocalPosition: {x: 0.21999997, y: -0.65999997, z: -0.09500003}
+  m_LocalPosition: {x: 0.159, y: -0.516, z: -0.09500003}
   m_LocalScale: {x: 0.10000001, y: 0.5, z: 0.099999994}
   m_Children: []
   m_Father: {fileID: 4090040339061998}
@@ -261,7 +262,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1980856595061042}
   m_LocalRotation: {x: -0, y: -0, z: -0.19936797, w: 0.97992474}
-  m_LocalPosition: {x: -0.21999997, y: -0.65999997, z: -0.09500003}
+  m_LocalPosition: {x: -0.173, y: -0.548, z: -0.09500003}
   m_LocalScale: {x: 0.099999994, y: 0.5, z: 0.099999994}
   m_Children: []
   m_Father: {fileID: 4214980029377298}
@@ -367,7 +368,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 90bc4db2fb57fdb409f43bfda60bb0df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -437,7 +438,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 90bc4db2fb57fdb409f43bfda60bb0df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -472,7 +473,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 90bc4db2fb57fdb409f43bfda60bb0df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -507,7 +508,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 90bc4db2fb57fdb409f43bfda60bb0df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -636,6 +637,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fdc8c665ebc1b4f9c2e57619f718cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114447188390713996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432573410662876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7356ccbe5ff9b8488c1ae8162d25c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joints:
+  - {fileID: 1484756799776562}
+  - {fileID: 1376936033916774}
+  - {fileID: 1136907148525300}
+  - {fileID: 1103046019064298}
 --- !u!114 &114589727882764448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -647,7 +664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eab72be4f5325c4cb953fbe851aac38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bitsFlipped: 0
   speed: 0
   head: {fileID: 0}
   camParent: {fileID: 0}

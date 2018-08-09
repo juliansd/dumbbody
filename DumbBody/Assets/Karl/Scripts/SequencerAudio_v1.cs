@@ -15,6 +15,8 @@ public class SequencerAudio_v1 : NetworkBehaviour {
     CreateSequencerButtons sequencerCanvas;
     SequencerStateStatus sequencerState; // keeps track of sequencer state
 
+    public static int count = 0;
+
 
     #endregion Variables
 
@@ -64,18 +66,22 @@ public class SequencerAudio_v1 : NetworkBehaviour {
     //Plays music
     public void PlayMusic()
     {
+        count = 0; // if count > 0, this will indicate that the player needs to "dance"
         //Iterate through the ulong to see which buttons need to be "activated" on sequencer
         for(int k = 0; k < 64; k++)
         {
             if((sequencerState.bitsOnOrOff >>k & 1)== 1)
             {
                 sequencerCanvas.buttons[k / 8, k % 8].GetComponent<Image>().color = Color.blue;
+                count++;
             }
             else
             {
                 sequencerCanvas.buttons[k / 8, k % 8].GetComponent<Image>().color = Color.white;
             }
         }
+
+        
 
         int i = currentRow;
         print("sequencer onoff: " + sequencerState.bitsOnOrOff);
