@@ -15,6 +15,9 @@ public class PlayerController : NetworkBehaviour {
 
     #region Variables
 
+    [SyncVar]
+    public Color playerColor;
+
     [HideInInspector]
     public const float MAXSPEED = 1.5f;
 
@@ -36,6 +39,8 @@ public class PlayerController : NetworkBehaviour {
 
 
     #region Methods
+
+
     public override void OnStartServer()
     {
         GameObject temp = GameObject.FindGameObjectWithTag("SequencerState");
@@ -49,11 +54,13 @@ public class PlayerController : NetworkBehaviour {
         {
             sequencerButtonManager = temp_1.GetComponent<CreateSequencerButtons>();
         }
+        playerColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        CmdSetColor(playerColor);
     }
 
     public override void OnStartLocalPlayer () {
-        
-        transform.Find("Torso").GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        playerColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        CmdSetColor(playerColor);
         head = transform.Find("Head");
         cam = Camera.main.transform;
         camParent = cam.parent;
@@ -73,9 +80,14 @@ public class PlayerController : NetworkBehaviour {
         }
 
 	}
-	
 
-	void Update () {
+    void Start()
+    {
+        if (isServer)
+            RpcSetColor(playerColor);
+    }
+
+    void Update () {
 
         if (!isLocalPlayer)
             return;
@@ -126,6 +138,18 @@ public class PlayerController : NetworkBehaviour {
             else
                 moveTimer++; //otherwise add time if button is being held down
         }
+    }
+    [ClientRpc]
+    public void RpcSetColor(Color color)
+    {
+        playerColor = color;
+        transform.Find("Torso").GetComponent<Renderer>().material.color = color;
+    }
+
+    [Command]
+    public void CmdSetColor(Color color)
+    {
+        playerColor = color;
     }
     
     #endregion Methods
