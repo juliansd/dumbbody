@@ -16,14 +16,11 @@ public class Dance : MonoBehaviour {
 
     bool needsReset = false;
 
-    public Transform body;
-
 	void Awake () {
         instance = this; //Singleton
 	}
     private void Start()
     {
-        body = transform.Find("Torso");
         for(int i = 0; i < 4; i++)
         {
             musicOffPositions[i] = joints[i].transform.rotation;
@@ -31,6 +28,7 @@ public class Dance : MonoBehaviour {
     }
     private void Update()
     {
+
         if(SequencerAudio_v1.count > 0)
         {
             MakeDance();
